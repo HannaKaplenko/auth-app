@@ -2,7 +2,7 @@ import { Button, StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create ({
     container:{
-        backgroundColor: "#FEE53F",
+        backgroundColor: "#096B68",
         width: "100%",
         height: "100%",
         alignItems: "center",
@@ -16,12 +16,12 @@ height: 422,
 borderRadius: 10,
 paddingVertical: 30,
 paddingHorizontal: 24,
-backgroundColor: "#FFFFFF",
+backgroundColor: "#FFFBDE",
 marginHorizontal: 16,
 marginVertical: 195,
 },
     title: {
- color: "#000000",
+ color: "#FE4F2D",
 fontWeight: 500,
 fontSize: 24,
 lineHeight: 32,
@@ -46,7 +46,7 @@ lineHeight: 32,
     input: {
         borderRadius: 8,
         borderWidth: 1,
-        color: "#D8D8DC",
+        color: "#000000",
         marginHorizontal: 8,
         marginVertical: 10, 
     },
@@ -74,7 +74,7 @@ lineHeight: 32,
     },
 
     button: {
-        backgroundColor: "#000000",
+        backgroundColor: "#FE4F2D",
         width: 295,
         height: 44,
         borderRadius: 8,

@@ -3,7 +3,7 @@ import {styles} from './styles';
 import {Text, View, FlatList, Image} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
-export const Products = () => {
+export const ProductsList = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [products, setProducts] = useState<any>([]);
 

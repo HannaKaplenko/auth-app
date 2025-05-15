@@ -7,12 +7,14 @@ import {
   TouchableOpacity,
   SafeAreaView,
 } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 export const AuthorizationScreen = () => {
   const [form, setForm] = useState({
-    email: ' ',
-    password: ' ',
+    username: '',
+    password: '',
   });
+  const navigation = useNavigation ();
   const [timer, setTimer] = useState(0);
   const [textColor, setTextColor] = useState('black');
   useEffect(() => {
@@ -33,7 +35,7 @@ export const AuthorizationScreen = () => {
   }, [timer]);
 
   const OnChangeLogin = (text: string) => {
-    setForm(prev => ({...form, email: text}));
+    setForm(prev => ({...form, username: text}));
   };
 
   const OnChangePassword = (text: string) => {
@@ -44,21 +46,26 @@ export const AuthorizationScreen = () => {
   const onAuthorize = async () => {
     // const [error, setError] = useState ("")
     try {
-      console.log('Form:', form);
-      const response = await fetch('https://api-aac.opdev.pp.ua/api/auth', {
+      // console.log('Form:', form);
+      const response = await fetch('https://dummyjson.com/auth/login', {
         method: 'POST',
         headers: {
-          'X-Partner': 'dev',
           'Content-Type': 'application/json',
           Accept: 'application/json',
         },
         body: JSON.stringify({
-          email: form.email,
+          username: form.username,
           password: form.password,
         }),
       });
       const data = await response.json();
-      console.log('Response:', data);
+
+if (data.accessToken) {
+  navigation.navigate("ProductsList");
+  // console.log ("Login succsessful", data);
+}
+ 
+      // console.log('Response:', data);
     } catch (error) {
       console.error('Error:', error);
     }
@@ -68,16 +75,16 @@ export const AuthorizationScreen = () => {
     <SafeAreaView>
       <View style={styles.container}>
         <View style={styles.card}>
-          <Text style={styles.title}>UDK gazbeton</Text>
-          <Text style={styles.label}>Введіть email</Text>
+          <Text style={styles.title}>Ur Needs</Text>
+          <Text style={styles.label}>Введіть username</Text>
           <TextInput
-            value={form.email}
+            value={form.username}
             onChangeText={OnChangeLogin}
             placeholder="Введіть логін"
             style={styles.input}
           />
 
-          <Text style={styles.label}>Введіть пароль</Text>
+          <Text style={styles.label}>Введіть password</Text>
           <View style={styles.inputWrapper}>
             <TextInput
               value={form.password}
