@@ -33,6 +33,14 @@ textAlign: "center",
      image: {
       width: 70,
       height: 70,
+     },
+
+     loadingText: {
+         color: "#000000",
+        textAlign: "center",
+        fontStyle: "italic",
+        fontWeight: "bold",
+
      }
 
    //   description: {
