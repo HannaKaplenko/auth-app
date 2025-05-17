@@ -1,6 +1,7 @@
 import {createStackNavigator} from '@react-navigation/stack';
 import {AuthorizationScreen} from '../modules/authorization';
-import {ProductsList} from '../modules/Products list';
+import {ProductsList} from '../modules/productsList';
+// import {ProductView} from "../modules/product";
 const Stack = createStackNavigator();
 
 export const StackNavigation = () => {
@@ -11,7 +12,7 @@ export const StackNavigation = () => {
         component={AuthorizationScreen}
         options={{title: "Main page"}}
       />
-      <Stack.Screen name="ProductsList" component={ProductsList} />
+      <Stack.Screen name="Products List" component={ProductsList} />
     </Stack.Navigator>
   );
 };

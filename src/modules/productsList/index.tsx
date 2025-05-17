@@ -2,10 +2,12 @@ import React, {useEffect, useState} from 'react';
 import {styles} from './styles';
 import {Text, View, FlatList, Image} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
+import { useNavigation } from '@react-navigation/native';
 
 export const ProductsList = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [products, setProducts] = useState<any>([]);
+  const navigation = useNavigation<any>();
 
 
   useEffect(() => {
@@ -26,8 +28,7 @@ export const ProductsList = () => {
     <SafeAreaView style={styles.container}>
         { isLoading 
           ? 
-            <Text style={ styles.loadingText}> Loading...</Text>
-              
+            <Text style={ styles.loadingText}> Loading...</Text>            
            : 
           <FlatList
         data={products}

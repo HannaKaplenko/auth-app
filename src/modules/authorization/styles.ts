@@ -33,7 +33,7 @@ lineHeight: 32,
         fontSize: 16,
     },
 
-    Image: {
+    image: {
         width: 16,
         height: 11,
         position: 'absolute',
