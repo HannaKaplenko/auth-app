@@ -1,25 +1,25 @@
-import React, { useState} from 'react';
-import {styles} from './styles';
-import {Text, View, TextInput, TouchableOpacity, SafeAreaView, Image} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
+import React, { useState } from 'react';
+import { styles } from './styles';
+import { Text, View, TextInput, TouchableOpacity, SafeAreaView, Image } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 export const AuthorizationScreen = () => {
-  const [form, setForm] = useState({username: '', password: '',});
-   const [showPassword, setShowPassword] = useState(true);
+  const [form, setForm] = useState({ username: '', password: '', });
+  const [showPassword, setShowPassword] = useState(true);
   const navigation = useNavigation();
-const [error, setError] = useState ("");
+  const [error, setError] = useState("");
   const onChangeLogin = (text: string) => {
-    setForm({...form, username: text});
+    setForm({ ...form, username: text });
   };
 
   const onChangePassword = (text: string) => {
-    setForm({...form, password: text});
+    setForm({ ...form, password: text });
   };
 
   const onAuthorize = async () => {
-  
+
     try {
-   
+
       const response = await fetch('https://dummyjson.com/auth/login', {
         method: 'POST',
         headers: {
@@ -35,10 +35,10 @@ const [error, setError] = useState ("");
 
       if (data.accessToken) {
         navigation.navigate('');
-      
+
       }
 
-    
+
     } catch (error) {
       console.error('Error:', error);
     }
@@ -67,8 +67,8 @@ const [error, setError] = useState ("");
 
               style={styles.input}
             />
-            <TouchableOpacity style={styles.eyeButton} onPressIn={() => setShowPassword (!showPassword)}>
-            <Image source= {require("../../../assets/images/eye.png")} style= {styles.eyeButton} accessibilityLabel="eye"/> 
+            <TouchableOpacity style={styles.eyeButton} onPressIn={() => setShowPassword(!showPassword)}>
+              <Image source={require("../../../assets/images/eye.png")} style={styles.eyeButton} accessibilityLabel="eye" />
             </TouchableOpacity>
           </View>
           <Text style={styles.message}>

@@ -4,8 +4,8 @@ import { StackNavigation } from "./StackNavigation"
 export const RootNavigation = () => {
     return (
         <NavigationContainer>
-        <StackNavigation />
+            <StackNavigation />
         </NavigationContainer>
 
-);
+    );
 }
