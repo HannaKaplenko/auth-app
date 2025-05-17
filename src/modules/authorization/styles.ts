@@ -36,19 +36,22 @@ export const styles = StyleSheet.create({
         marginLeft: "85%",
     },
     input: {
+        height: 40,
         borderRadius: 8,
         borderWidth: 1,
         color: "#000000",
-        marginHorizontal: 8,
+        paddingHorizontal: 8,
         marginVertical: 10,
     },
     inputWrapper: {
         justifyContent: 'center',
         display: "flex",
+        position: 'relative',
     },
     eyeButton: {
-        justifyContent: 'center',
-        alignItems: 'center',
+        position: 'absolute',
+        right: 10,
+        padding: 8,
     },
     message: {
         color: "#191F35",
@@ -69,15 +72,5 @@ export const styles = StyleSheet.create({
         color: "#FFFFFF",
         fontSize: 16,
         fontWeight: 'bold',
-    },
-    timerText: {
-        color: "FFFFFF",
-        fontWeight: "bold",
-        textAlign: "center",
-        margin: 30,
-    },
-    redText: {
-        color: "red",
-        fontWeight: "bold",
     },
 })

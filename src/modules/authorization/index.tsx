@@ -11,15 +11,11 @@ export const AuthorizationScreen = () => {
   const onChangeLogin = (text: string) => {
     setForm({ ...form, username: text });
   };
-
   const onChangePassword = (text: string) => {
     setForm({ ...form, password: text });
   };
-
   const onAuthorize = async () => {
-
     try {
-
       const response = await fetch('https://dummyjson.com/auth/login', {
         method: 'POST',
         headers: {
@@ -32,13 +28,9 @@ export const AuthorizationScreen = () => {
         }),
       });
       const data = await response.json();
-
       if (data.accessToken) {
         navigation.navigate('ProductsList');
-
       }
-
-
     } catch (error) {
       console.error('Error:', error);
     }
@@ -54,9 +46,7 @@ export const AuthorizationScreen = () => {
             value={form.username}
             onChangeText={onChangeLogin}
             placeholder="Введіть логін"
-            style={styles.input}
-          />
-
+            style={styles.input} />
           <Text style={styles.label}>Введіть password</Text>
           <View style={styles.inputWrapper}>
             <TextInput
@@ -64,17 +54,12 @@ export const AuthorizationScreen = () => {
               onChangeText={onChangePassword}
               placeholder="Введіть пароль"
               secureTextEntry={!showPassword}
-
-              style={styles.input}
-            />
+              style={styles.input} />
             <TouchableOpacity style={styles.eyeButton} onPressIn={() => setShowPassword(!showPassword)}>
               <Image source={require("../../../assets/images/eye.png")} style={styles.eyeButton} accessibilityLabel="eye" />
             </TouchableOpacity>
           </View>
-          <Text style={styles.message}>
-            Якщо ви забули пароль зверніться до адміністратора
-          </Text>
-
+          <Text style={styles.message}> Якщо ви забули пароль зверніться до адміністратора </Text>
           <TouchableOpacity style={styles.button} onPress={onAuthorize}>
             <Text style={styles.buttonText}>Увійти</Text>
           </TouchableOpacity>
