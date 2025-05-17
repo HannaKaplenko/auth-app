@@ -6,12 +6,9 @@ import { RootNavigation } from './src/navigation/RootNavigation';
 
 const App = () => {
   return (
-    <NavigationContainer>
       <View style={{ flex: 1 }}>
         <RootNavigation />
       </View>
-    </NavigationContainer>
   );
 };
-
 export default App;

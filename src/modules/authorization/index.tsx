@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 export const AuthorizationScreen = () => {
   const [form, setForm] = useState({ username: '', password: '', });
   const [showPassword, setShowPassword] = useState(true);
-  const navigation = useNavigation();
+  const navigation = useNavigation<any>();
   const [error, setError] = useState("");
   const onChangeLogin = (text: string) => {
     setForm({ ...form, username: text });
@@ -34,7 +34,7 @@ export const AuthorizationScreen = () => {
       const data = await response.json();
 
       if (data.accessToken) {
-        navigation.navigate('');
+        navigation.navigate('ProductsList');
 
       }
 

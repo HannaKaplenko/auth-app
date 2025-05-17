@@ -12,7 +12,7 @@ export const StackNavigation = () => {
         component={AuthorizationScreen}
         options={{ title: "Main page" }}
       />
-      <Stack.Screen name="Products List" component={ProductsList} />
+      <Stack.Screen name="ProductsList" component={ProductsList} />
     </Stack.Navigator>
   );
 };
