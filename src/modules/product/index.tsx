@@ -22,7 +22,7 @@ export const ProductView = () => {
         setIsLoading(false);
     }
     return (
-        <SafeAreaView style={{ flex: 1 }}>
+       
             <View style={styles.container}>
                 <Text style={styles.label}>Description:</Text>
                 <Text style={styles.description}>{'\t'} {product.description}</Text>
@@ -31,6 +31,6 @@ export const ProductView = () => {
                 {/* <Image source={{ uri: product.images[0] }} style={styles.image} /> */}
                 <Text style={styles.description}>Stock: {product.stock}</Text>
             </View>
-        </SafeAreaView>
+      
     )
 };
